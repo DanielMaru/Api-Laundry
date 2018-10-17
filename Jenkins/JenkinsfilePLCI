@@ -1,0 +1,17 @@
+pipeline {
+    agent {
+        docker {
+            image 'gradle:4.10-alpine'
+        }
+    }
+    environment {
+        CI = 'true' 
+    }
+    stages {
+        stage('Build') { 
+            steps {
+                sh 'gradle -v'
+            }
+        }
+    }
+}
