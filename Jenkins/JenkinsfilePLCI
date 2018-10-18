@@ -15,6 +15,7 @@ pipeline {
         }
         stage('Test') { 
             steps {
+            	sh 'chmod +x ./Jenkins/scripts/laundryCItest.sh'
                 sh './Jenkins/scripts/laundryCItest.sh'
             }
         }
