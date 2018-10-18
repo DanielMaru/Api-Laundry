@@ -10,7 +10,12 @@ pipeline {
     stages {
         stage('Build') { 
             steps {
-                sh 'gradle -v'
+                sh 'gradle build'
+            }
+        }
+        stage('Test') { 
+            steps {
+                sh './Jenkins/scripts/laundryCItest.sh'
             }
         }
     }

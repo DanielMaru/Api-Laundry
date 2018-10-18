@@ -28,6 +28,8 @@ dependencies {
     // Use JUnit test framework
     testImplementation 'junit:junit:4.12'
     
+    compile group: 'com.amazonaws', name: 'aws-java-sdk-dynamodb', version: '1.11.430'
+    
     //compile project(':API.PreaprobadoLibranzaFinalizacion-service') 
     
     providedCompile group: 'javax', name: 'javaee-api', version:'7.0'  
