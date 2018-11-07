@@ -19,5 +19,10 @@ pipeline {
                 sh './Jenkins/scripts/laundryCItest.sh'
             }
         }
+        stage('SonarQube Analysis') { 
+            steps {
+                sh 'gradle sonarqube'
+            }
+        }
     }
 }

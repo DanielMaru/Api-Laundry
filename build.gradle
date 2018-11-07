@@ -5,11 +5,18 @@
  * For more details take a look at the Java Libraries chapter in the Gradle
  * user guide available at https://docs.gradle.org/4.3/userguide/java_library_plugin.html
  */
+ 
+ plugins {
+  id "org.sonarqube" version "2.6.1"
+}
 
 // Apply the java-library plugin to add support for Java Library
 apply plugin: 'java-library'
 apply plugin: 'eclipse'
 apply plugin: 'war'
+apply plugin: 'jacoco'
+
+
 
 // In this section you declare where to find the dependencies of your project
 repositories {
@@ -32,10 +39,19 @@ dependencies {
     
     //compile project(':API.PreaprobadoLibranzaFinalizacion-service') 
     
-    providedCompile group: 'javax', name: 'javaee-api', version:'7.0'  
+    providedCompile group: 'javax', name: 'javaee-api', version:'7.0' 
+    
 }
 
 
+
+sonarqube {
+    properties {
+        property "sonar.projectName", "Api-Laundry"
+        property "sonar.projectKey", "Api-Laundry"
+        property "sonar.jacoco.reportPath", "${project.buildDir}/jacoco/test.exec"
+    }
+}
 
 eclipse {
     project {
