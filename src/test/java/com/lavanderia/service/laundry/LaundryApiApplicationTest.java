@@ -3,6 +3,7 @@ package com.lavanderia.service.laundry;
 import static org.junit.Assert.assertNotNull;
 
 import org.junit.Before;
+import org.junit.Test;
 
 public class LaundryApiApplicationTest {
 	
@@ -13,6 +14,7 @@ public class LaundryApiApplicationTest {
 		laundryApiApplication = new LaundryApiApplication();
 	}
 	
+	@Test
 	public void getClasses() {
 		assertNotNull(laundryApiApplication.getClass());
 	}
